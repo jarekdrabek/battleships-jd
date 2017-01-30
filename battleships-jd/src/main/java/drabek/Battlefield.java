@@ -33,7 +33,9 @@ public class Battlefield {
     }
 
     public boolean shot(String coordinates) {
-        return Optional.ofNullable(units.get(coordinates)).orElse(false);
+        Boolean hit = Optional.ofNullable(units.get(coordinates)).orElse(false);
+        LOG.info("Shot on {} {}!", coordinates, hit?"succeeded":"missed");
+        return hit;
     }
 
     @Override
