@@ -10,11 +10,18 @@ public class Column {
         return new Column(columnValue);
     }
 
-    public Column(Character columnValue) {
+    private Column(Character columnValue) {
         if("ABCDEFGHIJabcdefghij".indexOf(columnValue)<0){
             throw new IllegalArgumentException("Column must be a Character between A and B or between a and b");
         }
         this.columnValue = columnValue;
+    }
+
+    @Override
+    public String toString() {
+        return "Column{" +
+                "columnValue=" + columnValue +
+                '}';
     }
 
     @Override
